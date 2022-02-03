@@ -4,11 +4,7 @@ type Props = {
   setElement: React.Dispatch<React.SetStateAction<Element | null>>;
 };
 
-const Pagination: React.FC<Props> = ({
-  currentPage,
-  maxPage,
-  setElement,
-}: Props) => {
+const Pagination = ({ currentPage, maxPage, setElement }: Props) => {
   return (
     <>
       {currentPage !== maxPage ? (

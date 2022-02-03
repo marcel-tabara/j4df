@@ -5,7 +5,7 @@ type Props = {
   open: boolean;
 };
 
-const LangMenuItems: React.FC<Props> = ({ open }: Props) => {
+const LangMenuItems = ({ open }: Props) => {
   return (
     <>
       {open && (

@@ -9,12 +9,7 @@ type Props = {
   children?: React.ReactNode;
 };
 
-const NextLink: React.FC<Props> = ({
-  href,
-  locale,
-  children,
-  ...rest
-}: Props) => {
+const NextLink = ({ href, locale, children, ...rest }: Props) => {
   return (
     <Link href={href} locale={locale}>
       <a {...rest}>{children}</a>

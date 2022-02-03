@@ -11,7 +11,7 @@ const meta = {
   ogImagePath: '/assets/card-image.webp',
 };
 
-const Meta: React.FC<Props> = ({ pageTitle }: Props) => {
+const Meta = ({ pageTitle }: Props) => {
   const router = useRouter();
   const ogUrl = SITE_URL + router.asPath;
   const ogType = router.pathname === '/' ? 'website' : 'article';

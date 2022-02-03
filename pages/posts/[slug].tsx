@@ -1,11 +1,9 @@
 import { GetStaticPaths, GetStaticProps } from 'next';
 import { MDXRemote, MDXRemoteSerializeResult } from 'next-mdx-remote';
 import { serialize } from 'next-mdx-remote/serialize';
-import dynamic from 'next/dynamic';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
 import { useEffect } from 'react';
-import Directions from '../../components/Directions';
 import Layout from '../../components/Layout';
 import Thumbnail from '../../components/Thumbnail';
 import { useMdxComponentsContext } from '../../context/MdxComponents';
@@ -18,12 +16,7 @@ type Props = {
   frontMatter: Omit<IPost, 'slug'>;
 };
 
-const components = {
-  Directions,
-  Tips: dynamic(() => import('../../components/Tips')),
-};
-
-const PostPage: React.FC<Props> = ({ source, frontMatter }: Props) => {
+const PostPage = ({ source, frontMatter }: Props) => {
   const router = useRouter();
   const lang = router.locale;
 
@@ -60,7 +53,7 @@ const PostPage: React.FC<Props> = ({ source, frontMatter }: Props) => {
 
         <p>{frontMatter.description}</p>
 
-        <MDXRemote {...source} components={components} />
+        <MDXRemote {...source} />
       </article>
     </Layout>
   );

@@ -1,11 +1,9 @@
-import type { AppProps } from 'next/app';
 import { ThemeProvider } from 'next-themes';
-
+import type { AppProps } from 'next/app';
+import 'tailwindcss/tailwind.css';
 import { MdxComponentsProvider } from '../context/MdxComponents';
 
-import 'tailwindcss/tailwind.css';
-
-const MyApp: React.FC<AppProps> = ({ Component, pageProps }: AppProps) => {
+const MyApp = ({ Component, pageProps }: AppProps) => {
   return (
     <ThemeProvider attribute="class">
       <MdxComponentsProvider>

@@ -2,7 +2,7 @@ import { Menu } from '@headlessui/react';
 import { useRouter } from 'next/router';
 import LangMenuItems from './LangMenuItems';
 
-const LangMenu: React.FC = () => {
+const LangMenu = () => {
   const router = useRouter();
   const lang = router.locale;
 

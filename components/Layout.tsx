@@ -6,7 +6,7 @@ type Props = {
   pageTitle?: string;
 };
 
-const Layout: React.FC<Props> = ({ children, pageTitle }: Props) => {
+const Layout = ({ children, pageTitle }: Props) => {
   return (
     <>
       <Meta pageTitle={pageTitle} />

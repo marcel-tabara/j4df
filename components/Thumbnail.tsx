@@ -7,7 +7,7 @@ type Props = {
   slug?: string;
 };
 
-const Thumbnail: React.FC<Props> = ({ title, src, slug }: Props) => {
+const Thumbnail = ({ title, src, slug }: Props) => {
   const image = (
     <Image
       src={src}

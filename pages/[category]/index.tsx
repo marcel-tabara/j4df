@@ -14,7 +14,7 @@ type Props = {
   posts: IPost[];
 };
 
-const CategoryIndex: React.FC<Props> = ({ posts }: Props) => {
+const CategoryIndex = ({ posts }: Props) => {
   const router = useRouter();
   const lang = router.locale;
 

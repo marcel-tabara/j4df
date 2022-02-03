@@ -1,17 +1,16 @@
-import { useEffect, useRef, useState } from 'react';
 import { useRouter } from 'next/router';
-import useSWR from 'swr';
+import { useEffect, useRef, useState } from 'react';
 import { IconContext } from 'react-icons';
 import { FaSearch } from 'react-icons/fa';
-
-import NextLink from './NextLink';
+import useSWR from 'swr';
 import { IPost } from '../types/post';
+import NextLink from './NextLink';
 
 type Results = Pick<IPost, 'slug' | 'title'>;
 
 const fetcher = (url: string) => fetch(url).then((res) => res.json());
 
-const Search: React.FC = () => {
+const Search = () => {
   const ref = useRef<HTMLDivElement>(null);
   const [query, setQuery] = useState('');
   const [active, setActive] = useState(false);

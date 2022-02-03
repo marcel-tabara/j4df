@@ -1,6 +1,5 @@
-import { useRouter } from 'next/router';
 import { Menu } from '@headlessui/react';
-
+import { useRouter } from 'next/router';
 import NextLink from './NextLink';
 
 type Props = {
@@ -15,7 +14,7 @@ const menuItemCss = {
     'flex justify-between w-full px-4 py-2 text-sm leading-5 text-left focus:outline-none cursor-pointer',
 };
 
-const LangMenuItem: React.FC<Props> = ({ lang, text }: Props) => {
+const LangMenuItem = ({ lang, text }: Props) => {
   const router = useRouter();
   const slug = router.query.slug;
   const asPath = router.asPath;

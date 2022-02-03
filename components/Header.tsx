@@ -1,10 +1,10 @@
+import { SITE_NAME } from '../utils/constants';
 import LangMenu from './LangMenu';
 import NextLink from './NextLink';
 import Search from './Search';
 import ThemeSwitch from './ThemeSwitch';
-import { SITE_NAME } from '../utils/constants';
 
-const Header: React.FC = () => {
+const Header = () => {
   return (
     <header className="py-2">
       <div className="flex justify-between items-center">

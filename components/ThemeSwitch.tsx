@@ -1,10 +1,10 @@
-import { useState, useEffect } from 'react';
 import { useTheme } from 'next-themes';
-import Switch from 'react-switch';
+import { useEffect, useState } from 'react';
 import { IconContext } from 'react-icons';
 import { FaMoon, FaSun } from 'react-icons/fa';
+import Switch from 'react-switch';
 
-const ThemeSwitch: React.FC = () => {
+const ThemeSwitch = () => {
   const { theme, setTheme } = useTheme();
 
   const dark = theme === 'dark' ? true : false;

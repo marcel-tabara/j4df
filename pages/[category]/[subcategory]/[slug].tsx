@@ -16,7 +16,7 @@ type Props = {
   frontMatter: Omit<IPost, 'slug'>;
 };
 
-const SubCategoryPage: React.FC<Props> = ({ source, frontMatter }: Props) => {
+const SubCategoryPage = ({ source, frontMatter }: Props) => {
   const router = useRouter();
   const lang = router.locale;
 
