@@ -1,10 +1,10 @@
 type Props = {
-  currentPage: number;
-  maxPage: number;
-  setElement: React.Dispatch<React.SetStateAction<Element | null>>;
-};
+  currentPage: number
+  maxPage: number
+  setElement: React.Dispatch<React.SetStateAction<Element | null>>
+}
 
-const Pagination = ({ currentPage, maxPage, setElement }: Props) => {
+export const Pagination = ({ currentPage, maxPage, setElement }: Props) => {
   return (
     <>
       {currentPage !== maxPage ? (
@@ -13,7 +13,5 @@ const Pagination = ({ currentPage, maxPage, setElement }: Props) => {
         </p>
       ) : null}
     </>
-  );
-};
-
-export default Pagination;
+  )
+}

@@ -6,21 +6,21 @@ import {
   SetStateAction,
   useContext,
   useState,
-} from 'react';
+} from 'react'
 
 type ContextProps = {
-  lang: string | undefined;
-  setLang: Dispatch<SetStateAction<string | undefined>>;
-};
+  lang: string | undefined
+  setLang: Dispatch<SetStateAction<string | undefined>>
+}
 
 type Props = {
-  children: ReactNode;
-};
+  children: ReactNode
+}
 
-const MdxComponentsContext = createContext({} as ContextProps);
+const MdxComponentsContext = createContext({} as ContextProps)
 
 export function MdxComponentsProvider({ children }: Props): ReactElement {
-  const [lang, setLang] = useState<string | undefined>(undefined);
+  const [lang, setLang] = useState<string | undefined>(undefined)
 
   return (
     <MdxComponentsContext.Provider
@@ -31,9 +31,9 @@ export function MdxComponentsProvider({ children }: Props): ReactElement {
     >
       {children}
     </MdxComponentsContext.Provider>
-  );
+  )
 }
 
 export function useMdxComponentsContext(): ContextProps {
-  return useContext(MdxComponentsContext);
+  return useContext(MdxComponentsContext)
 }

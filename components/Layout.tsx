@@ -1,12 +1,12 @@
-import Header from '../components/Header';
-import Meta from '../components/Meta';
+import { Header } from '../components/Header'
+import { Meta } from '../components/Meta'
 
 type Props = {
-  children: React.ReactNode;
-  pageTitle?: string;
-};
+  children: React.ReactNode
+  pageTitle?: string
+}
 
-const Layout = ({ children, pageTitle }: Props) => {
+export const Layout = ({ children, pageTitle }: Props) => {
   return (
     <>
       <Meta pageTitle={pageTitle} />
@@ -16,7 +16,5 @@ const Layout = ({ children, pageTitle }: Props) => {
         <main className="pt-4 pb-12">{children}</main>
       </div>
     </>
-  );
-};
-
-export default Layout;
+  )
+}

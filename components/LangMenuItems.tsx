@@ -1,11 +1,11 @@
-import { Menu } from '@headlessui/react';
-import LangMenuItem from './LangMenuItem';
+import { Menu } from '@headlessui/react'
+import { LangMenuItem } from './LangMenuItem'
 
 type Props = {
-  open: boolean;
-};
+  open: boolean
+}
 
-const LangMenuItems = ({ open }: Props) => {
+export const LangMenuItems = ({ open }: Props) => {
   return (
     <>
       {open && (
@@ -19,7 +19,5 @@ const LangMenuItems = ({ open }: Props) => {
         </Menu.Items>
       )}
     </>
-  );
-};
-
-export default LangMenuItems;
+  )
+}

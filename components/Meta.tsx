@@ -1,22 +1,22 @@
-import Head from 'next/head';
-import { useRouter } from 'next/router';
-import { SITE_NAME, SITE_URL, TWITTER_USERNAME } from '../utils/constants';
+import Head from 'next/head'
+import { useRouter } from 'next/router'
+import { SITE_NAME, SITE_URL, TWITTER_USERNAME } from '../utils/constants'
 
 type Props = {
-  pageTitle?: string;
-};
+  pageTitle?: string
+}
 
 const meta = {
   description: `${SITE_NAME} description.`,
   ogImagePath: '/assets/card-image.webp',
-};
+}
 
-const Meta = ({ pageTitle }: Props) => {
-  const router = useRouter();
-  const ogUrl = SITE_URL + router.asPath;
-  const ogType = router.pathname === '/' ? 'website' : 'article';
-  const ogTitle = pageTitle ? pageTitle : 'this is pagetitle';
-  const ogImage = SITE_URL + meta.ogImagePath;
+export const Meta = ({ pageTitle }: Props) => {
+  const router = useRouter()
+  const ogUrl = SITE_URL + router.asPath
+  const ogType = router.pathname === '/' ? 'website' : 'article'
+  const ogTitle = pageTitle ? pageTitle : 'this is pagetitle'
+  const ogImage = SITE_URL + meta.ogImagePath
 
   return (
     <Head>
@@ -63,7 +63,5 @@ const Meta = ({ pageTitle }: Props) => {
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:site" content={TWITTER_USERNAME} />
     </Head>
-  );
-};
-
-export default Meta;
+  )
+}

@@ -1,23 +1,23 @@
-import { Menu } from '@headlessui/react';
-import { useRouter } from 'next/router';
-import NextLink from './NextLink';
+import { Menu } from '@headlessui/react'
+import { useRouter } from 'next/router'
+import { NextLink } from './NextLink'
 
 type Props = {
-  lang: string | undefined;
-  text: string;
-};
+  lang: string | undefined
+  text: string
+}
 
 const menuItemCss = {
   activeTrue: 'bg-gray-100 dark:bg-green-500 text-gray-900 dark:text-gray-100',
   activeFalse: 'text-gray-700 dark:text-gray-300',
   common:
     'flex justify-between w-full px-4 py-2 text-sm leading-5 text-left focus:outline-none cursor-pointer',
-};
+}
 
-const LangMenuItem = ({ lang, text }: Props) => {
-  const router = useRouter();
-  const slug = router.query.slug;
-  const asPath = router.asPath;
+export const LangMenuItem = ({ lang, text }: Props) => {
+  const router = useRouter()
+  const slug = router.query.slug
+  const asPath = router.asPath
 
   return (
     <>
@@ -37,7 +37,7 @@ const LangMenuItem = ({ lang, text }: Props) => {
                     pathname: asPath,
                   },
                   { locale: lang }
-                );
+                )
               }}
             >
               {text}
@@ -60,7 +60,5 @@ const LangMenuItem = ({ lang, text }: Props) => {
         </Menu.Item>
       )}
     </>
-  );
-};
-
-export default LangMenuItem;
+  )
+}

@@ -1,29 +1,29 @@
-import { useTheme } from 'next-themes';
-import { useEffect, useState } from 'react';
-import { IconContext } from 'react-icons';
-import { FaMoon, FaSun } from 'react-icons/fa';
-import Switch from 'react-switch';
+import { useTheme } from 'next-themes'
+import { useEffect, useState } from 'react'
+import { IconContext } from 'react-icons'
+import { FaMoon, FaSun } from 'react-icons/fa'
+import Switch from 'react-switch'
 
-const ThemeSwitch = () => {
-  const { theme, setTheme } = useTheme();
+export const ThemeSwitch = () => {
+  const { theme, setTheme } = useTheme()
 
-  const dark = theme === 'dark' ? true : false;
+  const dark = theme === 'dark' ? true : false
 
-  const [checked, setChecked] = useState(dark);
-  const [mounted, setMounted] = useState(false);
+  const [checked, setChecked] = useState(dark)
+  const [mounted, setMounted] = useState(false)
 
   const handleChange = (nextChecked: boolean) => {
-    setChecked(nextChecked);
-  };
+    setChecked(nextChecked)
+  }
 
   // When mounted on client, now we can show the UI
-  useEffect(() => setMounted(true), []);
+  useEffect(() => setMounted(true), [])
 
   useEffect(() => {
-    setTheme(checked ? 'dark' : 'light');
-  }, [checked, setTheme]);
+    setTheme(checked ? 'dark' : 'light')
+  }, [checked, setTheme])
 
-  if (!mounted) return null;
+  if (!mounted) return null
 
   return (
     <Switch
@@ -60,7 +60,5 @@ const ThemeSwitch = () => {
       height={24}
       width={48}
     />
-  );
-};
-
-export default ThemeSwitch;
+  )
+}

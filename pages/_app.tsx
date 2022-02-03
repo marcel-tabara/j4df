@@ -1,7 +1,7 @@
-import { ThemeProvider } from 'next-themes';
-import type { AppProps } from 'next/app';
-import 'tailwindcss/tailwind.css';
-import { MdxComponentsProvider } from '../context/MdxComponents';
+import { ThemeProvider } from 'next-themes'
+import type { AppProps } from 'next/app'
+import 'tailwindcss/tailwind.css'
+import { MdxComponentsProvider } from '../context/MdxComponents'
 
 const MyApp = ({ Component, pageProps }: AppProps) => {
   return (
@@ -10,7 +10,7 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
         <Component {...pageProps} />
       </MdxComponentsProvider>
     </ThemeProvider>
-  );
-};
+  )
+}
 
-export default MyApp;
+export default MyApp

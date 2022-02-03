@@ -1,13 +1,13 @@
-import Image from 'next/image';
-import NextLink from './NextLink';
+import Image from 'next/image'
+import { NextLink } from './NextLink'
 
 type Props = {
-  title: string;
-  src: string;
-  slug?: string;
-};
+  title: string
+  src: string
+  slug?: string
+}
 
-const Thumbnail = ({ title, src, slug }: Props) => {
+export const Thumbnail = ({ title, src, slug }: Props) => {
   const image = (
     <Image
       src={src}
@@ -15,7 +15,7 @@ const Thumbnail = ({ title, src, slug }: Props) => {
       width={1280}
       height={720}
     />
-  );
+  )
   return (
     <>
       {slug ? (
@@ -26,7 +26,5 @@ const Thumbnail = ({ title, src, slug }: Props) => {
         image
       )}
     </>
-  );
-};
-
-export default Thumbnail;
+  )
+}

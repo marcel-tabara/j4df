@@ -1,10 +1,10 @@
-import { Menu } from '@headlessui/react';
-import { useRouter } from 'next/router';
-import LangMenuItems from './LangMenuItems';
+import { Menu } from '@headlessui/react'
+import { useRouter } from 'next/router'
+import { LangMenuItems } from './LangMenuItems'
 
-const LangMenu = () => {
-  const router = useRouter();
-  const lang = router.locale;
+export const LangMenu = () => {
+  const router = useRouter()
+  const lang = router.locale
 
   return (
     <div className="relative inline-block text-left">
@@ -33,7 +33,5 @@ const LangMenu = () => {
         )}
       </Menu>
     </div>
-  );
-};
-
-export default LangMenu;
+  )
+}

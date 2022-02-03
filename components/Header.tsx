@@ -1,10 +1,10 @@
-import { SITE_NAME } from '../utils/constants';
-import LangMenu from './LangMenu';
-import NextLink from './NextLink';
-import Search from './Search';
-import ThemeSwitch from './ThemeSwitch';
+import { SITE_NAME } from '../utils/constants'
+import { LangMenu } from './LangMenu'
+import { NextLink } from './NextLink'
+import { Search } from './Search'
+import { ThemeSwitch } from './ThemeSwitch'
 
-const Header = () => {
+export const Header = () => {
   return (
     <header className="py-2">
       <div className="flex justify-between items-center">
@@ -26,7 +26,5 @@ const Header = () => {
         <Search />
       </div>
     </header>
-  );
-};
-
-export default Header;
+  )
+}

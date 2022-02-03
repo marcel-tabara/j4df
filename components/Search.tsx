@@ -1,44 +1,44 @@
-import { useRouter } from 'next/router';
-import { useEffect, useRef, useState } from 'react';
-import { IconContext } from 'react-icons';
-import { FaSearch } from 'react-icons/fa';
-import useSWR from 'swr';
-import { IPost } from '../types/post';
-import NextLink from './NextLink';
+import { useRouter } from 'next/router'
+import { useEffect, useRef, useState } from 'react'
+import { IconContext } from 'react-icons'
+import { FaSearch } from 'react-icons/fa'
+import useSWR from 'swr'
+import { IPost } from '../types/post'
+import { NextLink } from './NextLink'
 
-type Results = Pick<IPost, 'slug' | 'title'>;
+type Results = Pick<IPost, 'slug' | 'title'>
 
-const fetcher = (url: string) => fetch(url).then((res) => res.json());
+const fetcher = (url: string) => fetch(url).then((res) => res.json())
 
-const Search = () => {
-  const ref = useRef<HTMLDivElement>(null);
-  const [query, setQuery] = useState('');
-  const [active, setActive] = useState(false);
+export const Search = () => {
+  const ref = useRef<HTMLDivElement>(null)
+  const [query, setQuery] = useState('')
+  const [active, setActive] = useState(false)
 
-  const router = useRouter();
-  const locale = router.locale;
+  const router = useRouter()
+  const locale = router.locale
 
-  const { data } = useSWR(`/api/search?q=${query}&locale=${locale}`, fetcher);
-  const results = data?.results;
+  const { data } = useSWR(`/api/search?q=${query}&locale=${locale}`, fetcher)
+  const results = data?.results
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) =>
-    setQuery(event.target.value);
+    setQuery(event.target.value)
 
-  const handleFocus = () => setActive(true);
+  const handleFocus = () => setActive(true)
 
-  const handleClickInside = () => setActive(false);
+  const handleClickInside = () => setActive(false)
 
   useEffect(() => {
     const handleClickOutside = (event: Event) => {
       if (ref.current && !ref.current.contains(event.target as Node)) {
-        setActive(false);
+        setActive(false)
       }
-    };
-    document.addEventListener('mousedown', handleClickOutside);
+    }
+    document.addEventListener('mousedown', handleClickOutside)
     return () => {
-      document.removeEventListener('mousedown', handleClickOutside);
-    };
-  });
+      document.removeEventListener('mousedown', handleClickOutside)
+    }
+  })
 
   return (
     <div ref={ref} className="relative">
@@ -76,7 +76,5 @@ const Search = () => {
         </ul>
       )}
     </div>
-  );
-};
-
-export default Search;
+  )
+}
