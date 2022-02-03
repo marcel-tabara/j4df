@@ -1,0 +1,46 @@
+{
+  "name": "j4df",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "dev:watch": "next-remote-watch ./_posts",
+    "build": "next build",
+    "start": "next start",
+    "type-check": "tsc --noEmit",
+    "lint": "eslint . --ext .ts,.tsx",
+    "prepare": "husky install"
+  },
+  "dependencies": {
+    "@headlessui/react": "^1.4.3",
+    "@tailwindcss/typography": "^0.5.0",
+    "autoprefixer": "^10.4.2",
+    "gray-matter": "^4.0.3",
+    "next": "12.0.8",
+    "next-mdx-remote": "^3.0.8",
+    "next-remote-watch": "^1.0.0",
+    "next-themes": "^0.0.15",
+    "postcss": "^8.4.5",
+    "react": "17.0.2",
+    "react-dom": "17.0.2",
+    "react-icons": "^4.3.1",
+    "react-switch": "^6.0.0",
+    "swr": "^1.1.2",
+    "tailwindcss": "^3.0.16"
+  },
+  "devDependencies": {
+    "@types/node": "^17.0.12",
+    "@types/react": "^17.0.38",
+    "@types/react-dom": "^17.0.11",
+    "@typescript-eslint/eslint-plugin": "^5.10.1",
+    "@typescript-eslint/parser": "^5.10.1",
+    "eslint": "^8.7.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-react": "^7.28.0",
+    "eslint-plugin-react-hooks": "^4.3.0",
+    "husky": "^7.0.4",
+    "prettier": "^2.5.1",
+    "ts-node": "^10.4.0",
+    "typescript": "^4.5.5"
+  }
+}
