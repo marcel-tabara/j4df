@@ -8,7 +8,7 @@ import { Thumbnail } from '../../components/Thumbnail'
 import usePagination from '../../hooks/usePagination'
 import { IPost } from '../../types/post'
 import { SITE_NAME } from '../../utils/constants'
-import { getAllPostsByCat } from '../../utils/mdxUtils'
+import { getAllPosts, getAllPostsByCat } from '../../utils/mdxUtils'
 
 type Props = {
   posts: IPost[]
@@ -73,7 +73,8 @@ export const getStaticProps: GetStaticProps = async ({ params, locale }) => {
 }
 
 export const getStaticPaths: GetStaticPaths = async (params) => {
-  const posts = getAllPostsByCat('en')
+  //const posts = getAllPostsByCat('en')
+  const posts = getAllPosts(params?.locales?.[0] ?? params.defaultLocale)
 
   const paths = params.locales!.flatMap((locale) =>
     posts.map((post) => ({
@@ -85,7 +86,7 @@ export const getStaticPaths: GetStaticPaths = async (params) => {
   )
 
   return {
-    paths: [],
+    paths,
     fallback: false,
   }
 }

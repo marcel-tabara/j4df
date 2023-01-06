@@ -16,7 +16,7 @@ type Props = {
 
 const Index = ({ posts }: Props) => {
   const router = useRouter()
-  const lang = router.locale
+  // const lang = router.locale
 
   const { currentPage, currentData, maxPage, setElement } = usePagination(
     posts,

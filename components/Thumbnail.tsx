@@ -20,7 +20,7 @@ export const Thumbnail = ({ title, src, slug }: Props) => {
     <>
       {slug ? (
         <NextLink href={`/posts/${slug}`} aria-label={title}>
-          {image}
+          {/* {image && image} */}
         </NextLink>
       ) : (
         image

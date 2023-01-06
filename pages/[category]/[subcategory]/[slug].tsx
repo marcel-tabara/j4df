@@ -5,7 +5,6 @@ import Head from 'next/head'
 import { useRouter } from 'next/router'
 import { useEffect } from 'react'
 import { Layout } from '../../../components/Layout'
-import { Thumbnail } from '../../../components/Thumbnail'
 import { useMdxComponentsContext } from '../../../context/MdxComponents'
 import { IPost } from '../../../types/post'
 import { SITE_URL } from '../../../utils/constants'
@@ -45,9 +44,9 @@ const SubCategoryPage = ({ source, frontMatter }: Props) => {
       </Head>
 
       <article className="prose prose-green dark:prose-dark">
-        <div className="mb-4">
+        {/* <div className="mb-4">
           <Thumbnail title={frontMatter.title} src={frontMatter.thumbnail} />
-        </div>
+        </div> */}
 
         <h1>{frontMatter.title}</h1>
         <p>{frontMatter.date}</p>
@@ -64,13 +63,15 @@ export default SubCategoryPage
 
 export const getStaticProps: GetStaticProps = async ({ params, locale }) => {
   const { content, data } = getPost(params, locale)
-
-  const mdxSource = await serialize(content, { scope: data })
+  const ndata = { ...data, date: data.date.toString() }
+  const mdxSource = await serialize(content, {
+    scope: ndata,
+  })
 
   return {
     props: {
       source: mdxSource,
-      frontMatter: data,
+      frontMatter: ndata,
     },
   }
 }
