@@ -1,30 +1,8 @@
+/** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ['./components/**/*.tsx', './pages/**/*.tsx'],
-  darkMode: 'class', // or 'media' or 'class'
+  content: ["./app/**/*.{js,ts,jsx,tsx}", "./components/**/*.{js,ts,jsx,tsx}"],
   theme: {
-    extend: {
-      typography: (theme) => ({
-        dark: {
-          css: {
-            color: theme('colors.gray.300'),
-            h1: {
-              color: theme('colors.gray.100'),
-            },
-            h2: {
-              color: theme('colors.gray.100'),
-            },
-            strong: {
-              color: theme('colors.gray.300'),
-            },
-          },
-        },
-      }),
-    },
+    extend: {},
   },
-  variants: {
-    extend: {
-      typography: ['dark'],
-    },
-  },
-  plugins: [require('@tailwindcss/typography')],
-}
+  plugins: [],
+};
